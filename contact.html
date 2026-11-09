@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Contact Me</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="education.html">Education</a> |
+            <a href="experience.html">Experience</a> |
+            <a href="henna.html">Henna Art</a> |
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <p>Feel free to reach out for academic inquiries, professional networking, or check out my social media profiles!</p>
+            <p><strong>Email:</strong> majmal2@gmu.edu</p>
+        </section>
+
+        <!-- Requirement 3b: JavaScript Array Loop -->
+        <section style="margin-top: 30px;">
+            <h3>Connect with Me</h3>
+            <ul id="contactList"></ul>
+        </section>
+
+        <!-- Requirement 3c: Button that opens a new browser window -->
+        <section style="margin-top: 30px; text-align: center;">
+            <h3>External Resources</h3>
+            <p>Click below to open a helpful developer reference window in a new tab/popup:</p>
+            <button onclick="openPopupWindow()">Open Developer Resource</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        // Function to satisfy the requirement: a button that opens a new window
+        function openPopupWindow() {
+            window.open("https://developer.mozilla.org", "_blank", "width=600,height=400");
+        }
+
+        // Array storing your social/contact links or handles
+        const Socials = [
+            '<a href="https://www.linkedin.com/in/mahnoor-ajmal-845092217/" target="_blank">LinkedIn Profile</a>',
+            '<a href="https://gmu.joinhandshake.com/profiles/sw38wd" target="_blank">Handshake Profile</a>',
+            '<a href="https://www.google.com/maps?cid=1234567890" target="_blank">Google Business Profile</a>',
+            '<a href="https://www.instagram.com/henna_by_mahnoor_22/" target="_blank">Instagram: @Henna_by_Mahnoor_22</a>'
+        ];
+
+        // Loop through the Socials array and display them in the contactList element
+        let listElement = document.getElementById("contactList");
+        for (let i = 0; i < Socials.length; i++) {
+            let listItem = document.createElement("li");
+            listItem.innerHTML = Socials[i];
+            listElement.appendChild(listItem);
+        }
+
+        // Last modified timestamp
+        document.getElementById("lastModified").innerText = document.lastModified;
+    </script>
+</body>
+</html>

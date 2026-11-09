@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="education.html">Education</a> |
+            <a href="experience.html">Experience</a> |
+            <a href="henna.html">Henna Art</a> |
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Requirement 3d: localStorage Greeting -->
+        <section id="greeting-section">
+            <h2 id="welcome-message"></h2>
+            <button onclick="resetName()">Reset Name</button>
+        </section>
+
+        <!-- Personal Introduction with Photo -->
+        <section style="display: flex; align-items: center; gap: 20px; margin-top: 20px;">
+            <img src="me.jpg" alt="Photo of Me" style="width: 1000px; height: 300px; border-radius: 50%; object-fit: cover; border: 3px solid #0f5a1f;">
+            <div>
+                <h2>About Me</h2>
+                <p>Hello, and welcome to my personal website! My name is Mahnoor Ajmal, and I am so glad you stopped by to check out my portfolio. I am 22 years old, originally from Pakistan, and have proudly called Virginia home since 2019. I am currently pursuing a Bachelor's Degree in Information Technology at George Mason University, concentrating in Web Application Development. Professionally, I work as a Temporary teacher for Prince William County Public Schools. Aside from that, I have a huge passion for creative expression and enjoy bringing custom designs to life through henna art. You can learn more about my work and services by checking out other pages on my site :)</p>
+                
+            </div>
+
+        </section>
+        <section style="margin-top: 30px;">
+    <h2>My Passion for Coding</h2>
+    <p style="text-indent: 30px";>The reason why I chose the field of IT is because it was very trending a couple of years ago, and I really wanted to try it out. Originally, I really wanted to go into the education field, but I realized that I wanted way more opportunities than just sticking to one path, which led me to get into IT. At first, I was very confused about it, but I finally found my passion in coding and learning different computer languages. My favorite one so far is definitely Java, but the easiest one that I would always stick to no matter what is definitely HTML. I have done a lot of projects along the way in class, but overall I have always found HTML the easiest to work with.</p>
+    <p style="text-indent: 30px";>I have other experience with coding too! Aside from HTML and Java, I have worked with JavaScript, Node.js, database languages like SQL, and Python. I am also familiar with the AWS environment. I just love the challenge of solving problems and creating something from scratch. additionally, I enjoy the creative process of bringing ideas to life through code. Just like this one!</p>
+</section>
+    </main>
+
+    <footer>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        function checkUser() {
+            let userName = localStorage.getItem("it331_user");
+            if (!userName || userName === "null" || userName === "") {
+                userName = prompt("Welcome! Please enter your name:");
+                if (userName) {
+                    localStorage.setItem("it331_user", userName);
+                } else {
+                    userName = "Guest";
+                }
+            }
+            document.getElementById("welcome-message").innerText = "Hello, " + userName + "! Welcome to my site.";
+        }
+
+        function resetName() {
+            localStorage.removeItem("it331_user");
+            checkUser();
+        }
+
+        window.onload = checkUser;
+        document.getElementById("lastModified").innerText = document.lastModified;
+    </script>
+
+</body>
+</html>

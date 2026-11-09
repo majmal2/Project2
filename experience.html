@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Professional Experience</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="education.html">Education</a> |
+            <a href="experience.html">Experience</a> |
+            <a href="henna.html">Henna Art</a> |
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1 style="text-align: center;">Work Background</h1>
+            <h2>Temporary Teacher - PWCS</h2>
+            <p>When I first applied to become a Temporary Teacher for Prince William County Public Schools, my main goal was simple: I needed a job with total flexibility while managing my college schedule. However, what started out as a convenient part-time role quickly turned into an incredibly eye-opening journey. Getting to see the inner workings of the public school system from an educator's perspective rather than a student's has been an amazing experience. It has given me a whole new appreciation for everything that goes into keeping a school running smoothly every single day.</p>
+            <p>In this role, I have had the opportunity to work with students of all ages, from elementary to high school. I have learned how to adapt my teaching style to meet the needs of different learners and how to manage a classroom effectively. I have also gained valuable experience in lesson planning, grading, and providing feedback to students. Overall, my time as a Temporary Teacher has been incredibly rewarding and has helped me develop important skills that will benefit me in my future career.</p>
+            <p>One of the absolute best parts of this job has been the people I've met and the professional relationships I've built across different schools. Working alongside so many different staff members, I've seen firsthand how genuinely humble, polite, and helpful the community in Prince William County really is. Teaching can be unpredictable, but the full-time teachers, administrators, and support staff are always ready to step in, guide you, and have your back no matter what comes up during the day. Having that kind of supportive environment makes coming into work so rewarding.</p>
+        </section>
+
+        <!-- Company / Work Photo -->
+        <section style="text-align: center; margin-top: 20px;">
+            <img src="work.png" alt="Work Environment" style="max-width: 100%; height: 280px; border-radius: 6px; object-fit: cover;">
+        </section>
+
+        <!-- Requirement 3a: Custom JavaScript Functions -->
+        <section style="margin-top: 30px; background: #ecf0f1; padding: 20px; border-radius: 6px;">
+            <h3>Interactive Feature</h3>
+            <p>Click the button below to view a summary of my professional skills:</p>
+            <button onclick="displayExperienceSummary()">Show Summary Message</button>
+            <p id="experienceOutput" style="margin-top: 15px; font-weight: bold; color: #2c3e50;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        function displayExperienceSummary() {
+            let message = "Key Skills: Classroom leadership, communication, time management, and client service operations.";
+            document.getElementById("experienceOutput").innerText = message;
+        }
+
+        document.getElementById("lastModified").innerText = document.lastModified;
+    </script>
+
+</body>
+</html>
